@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Poiret+One&display=swap');
+@import "../../node_modules/normalize.css/normalize";
+.font {
+    &--Poiret {
+        font-family: 'Poiret One', cursive;
+    }
+    &--Fjalla {
+        font-family: 'Fjalla One', sans-serif;
+    }
+}
+
+html,
+body {
+    height: 100%;
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.circle {
+    border-radius: 100vh;
+    &--1 {
+        border: solid 1em #f7f7f7;
+        box-shadow: .2em .2em .8em rgba(0, 0, 0, 0.1);
+        transition-duration: .3s;
+        transition-property: filter, box-shadow;
+        &:hover {
+            box-shadow: .2em .2em 1.6em rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+.page--home {
+    // min-height: 100%;
+    .my {
+        display: grid;
+        height: 100%;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        grid-template-rows: 280px 50px auto auto;
+        background: #f1f1f1;
+        border: solid 1px darken($color: #c1c1c1, $amount: 50);
+        &--photo {
+            img {
+                font-size: 10px;
+                filter: grayscale(0);
+                @media (any-hover: hover) {
+                    filter: grayscale(1);
+                }
+                &:hover {
+                    // box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1);
+                    filter: grayscale(0);
+                }
+            }
+        }
+        &--name {
+            font-size: 2.4rem;
+        }
+        &--identity {
+            font-size: 2rem;
+            color: darkgrey;
+        }
+        &--links {
+            $size: 10em;
+            svg {
+                height: calc(#{$size} - 2em);
+                width: calc(#{$size} - 2em);
+            }
+            ul {
+                padding-left: 0;
+                padding-top: 20px;
+                display: inline-flex;
+                width: 100%;
+                justify-content: space-between;
+                li {
+                    font-size: 4px;
+                    // background: red;
+                    margin: 0 1em;
+                    border-radius: 999px;
+                    height: $size;
+                    width: $size;
+                    list-style-type: none;
+                    transition-duration: .3s;
+                    transition-property: background;
+                    &:hover {
+                        background: cadetblue;
+                    }
+                }
+            }
+        }
+    }
+}
