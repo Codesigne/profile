@@ -44,7 +44,7 @@ body {
         align-content: center;
         text-align: center;
         grid-template-rows: 280px 50px auto auto;
-        &--photo {
+        &__photo {
             img {
                 font-size: 10px;
                 width: 22em;
@@ -58,14 +58,14 @@ body {
                 }
             }
         }
-        &--name {
+        &__name {
             font-size: 2.4rem;
         }
-        &--identity {
+        &__identity {
             font-size: 2rem;
             color: $c-1;
         }
-        &--links {
+        &__links {
             $size: 10em;
             svg {
                 height: calc(#{$size} - 2em);
