@@ -337,30 +337,30 @@ body {
   align-content: center;
   text-align: center;
   grid-template-rows: 280px 50px auto auto; }
-  .page--home .my--photo img {
+  .page--home .my__photo img {
     font-size: 10px;
     width: 22em;
     filter: grayscale(0); }
     @media (any-hover: hover) {
-      .page--home .my--photo img {
+      .page--home .my__photo img {
         filter: grayscale(1); } }
-    .page--home .my--photo img:hover {
+    .page--home .my__photo img:hover {
       filter: grayscale(0); }
-  .page--home .my--name {
+  .page--home .my__name {
     font-size: 2.4rem; }
-  .page--home .my--identity {
+  .page--home .my__identity {
     font-size: 2rem;
     color: darkgrey; }
-  .page--home .my--links svg {
+  .page--home .my__links svg {
     height: calc(10em - 2em);
     width: calc(10em - 2em); }
-  .page--home .my--links ul {
+  .page--home .my__links ul {
     padding-left: 0;
     padding-top: 20px;
     display: inline-flex;
     width: 100%;
     justify-content: space-between; }
-    .page--home .my--links ul li {
+    .page--home .my__links ul li {
       font-size: 4px;
       margin: 0 1em;
       border-radius: 999px;
@@ -369,7 +369,7 @@ body {
       list-style-type: none;
       transition-duration: .3s;
       transition-property: background; }
-      .page--home .my--links ul li:hover {
+      .page--home .my__links ul li:hover {
         background: cadetblue; }
 
 .page--programmer .l--table {
