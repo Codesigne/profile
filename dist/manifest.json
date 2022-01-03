@@ -1,0 +1,37 @@
+{
+    "name": "My Profile in",
+    "short_name": "My Profile in",
+
+    "start_url": "./index.html",
+
+
+
+    "display": "standalone",
+    "description": "....",
+    "icons": [
+    {
+        "src": "./assets/images/clock.png",
+        "type": "image/png",
+        "sizes": "640x640"
+    },
+    {
+        "src": "./assets/images/clock192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    },
+    {
+        "src": "./assets/images/clock512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }],
+
+    "orientation": "portrait-primary",
+    "background_color": "#003300",
+    "theme_color": "#330000",
+    "related_applications": [
+    {
+        "platform": "webapp",
+        "url": "https://codesigne.github.io/profile/manifest.json"
+    }]
+
+}
