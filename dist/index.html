@@ -105,5 +105,12 @@
         </section>
     </main>
 </body>
-
+  <script>
+  // register ServiceWorker, remember to use absolute path!
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/profile/dist/sw.js', {scope: '/profile/dist/'})
+  }
+  
+  // --- Application code here ---
+  </script>
 </html>
