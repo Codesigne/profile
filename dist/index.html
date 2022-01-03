@@ -107,10 +107,22 @@
 </body>
   <script>
   // register ServiceWorker, remember to use absolute path!
-  if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('/profile/dist/sw.js', {scope: '/profile/dist/'})
-  }
-  
+    //   if (navigator.serviceWorker) {
+    //     navigator.serviceWorker.register('/profile/dist/sw.js', {scope: '/profile/dist/'})
+    //   }
+  if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/profile/dist/sw.js', { scope: '/profile/dist/' }).then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    } else {
+        console.log('ServiceWorker not in navigatore:');
+    }
   // --- Application code here ---
   </script>
 </html>
