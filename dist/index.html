@@ -112,7 +112,9 @@
     //   }
   if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/profile/dist/sw.js', { scope: '/profile/dist/' }).then(function(registration) {
+            navigator.serviceWorker.register('/profile/dist/sw.js', {
+                scope: '.' // THIS IS REQUIRED FOR RUNNING A PROGRESSIVE WEB APP FROM A NON_ROOT PATH 
+                                                                    }).then(function(registration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, function(err) {
