@@ -10,17 +10,17 @@
     "description": "....",
     "icons": [
     {
-        "src": "./assets/images/clock.png",
+        "src": "https://codesigne.github.io/profile/dist/img/clock.png",
         "type": "image/png",
         "sizes": "640x640"
     },
     {
-        "src": "./assets/images/clock192.png",
+        "src": "https://codesigne.github.io/profile/dist/img/clock192.png",
         "type": "image/png",
         "sizes": "192x192"
     },
     {
-        "src": "./assets/images/clock512.png",
+        "src": "https://codesigne.github.io/profile/dist/img/clock512.png",
         "type": "image/png",
         "sizes": "512x512"
     }],
@@ -31,7 +31,7 @@
     "related_applications": [
     {
         "platform": "webapp",
-        "url": "https://codesigne.github.io/profile/manifest.json"
+        "url": "https://codesigne.github.io/profile/dist/manifest.json"
     }]
 
 }
