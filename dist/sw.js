@@ -61,6 +61,7 @@ self.addEventListener('activate', function (e) {
 
 self.addEventListener('message', function(event) {
     console.log('message triggered event', event)
+    console.log('Notification.permission :', Notification.permission)
     if (event.data !== undefined) {
          console.log('event.data !== undefined', event.data)
          if (event.data.type === 'USERLOGON_1') {
