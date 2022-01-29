@@ -58,3 +58,52 @@ self.addEventListener('activate', function (e) {
     })
   )
 })
+
+self.addEventListener('message', function(event) {
+    console.log('form data', event)
+    if (event.data !== undefined) {
+         if (event.data.type == 'USERLOGON_1') {
+            if (Notification.permission === "granted") {
+                self.registration.showNotification("TTTTTTUnauthurized tag Unauthurized check in.", {
+                    tag: 'TTTTTTUnauthurized Unauthurized check in',
+                    // renotify:true,
+                    // timestamp: Date.now(),
+                    body:"want to look at it ?",
+                    requireInteraction: true,
+                    vibrate: [200, 100, 200, 100, 200, 100, 200],
+                    // actions: [
+                        // { action: 'like', title: '👍Yes' },
+                        // { action: 'reply', title: '⤻ Reply' }
+                    // ]
+                });
+            }
+            // Otherwise, we need to ask the user for permission
+            else if (Notification.permission !== "denied") {
+                Notification.requestPermission().then(function(permission) {
+                    // If the user accepts, let's create a notification
+                    if (Notification.permission === "granted") {
+                        // If it's okay let's create a notification
+                        // console.log("Want to check in ? ");
+
+                        self.registration.showNotification
+                        self.registration.showNotification("TTTTTTUnauthurized tag Unauthurized check in.", {
+                            body:"want to look at it ?",
+                            tag: 'TTTTTTUnauthurized check in',
+                            // renotify:true,
+                            // timestamp: Date.now(),
+                            requireInteraction: true,
+                            vibrate: [200, 100, 200, 100, 200, 100, 200],
+                            // actions: [
+                            //     { action: 'like', title: '👍Yes' },
+                            //     // { action: 'reply', title: '⤻ Reply' }
+                            // ]
+                        });;
+                    }
+                });
+            }
+
+        }
+    } else if (event.data !== undefined) {
+
+    }
+});
