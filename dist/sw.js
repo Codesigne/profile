@@ -60,10 +60,13 @@ self.addEventListener('activate', function (e) {
 })
 
 self.addEventListener('message', function(event) {
-    console.log('form data', event)
+    console.log('message triggered event', event)
     if (event.data !== undefined) {
-         if (event.data.type == 'USERLOGON_1') {
+         console.log('event.data !== undefined', event.data)
+         if (event.data.type === 'USERLOGON_1') {
+            console.log("event.data.type === 'USERLOGON_1'")
             if (Notification.permission === "granted") {
+                console.log('Notification.permission === "granted"')
                 self.registration.showNotification("TTTTTTUnauthurized tag Unauthurized check in.", {
                     tag: 'TTTTTTUnauthurized Unauthurized check in',
                     // renotify:true,
@@ -71,17 +74,23 @@ self.addEventListener('message', function(event) {
                     body:"want to look at it ?",
                     requireInteraction: true,
                     vibrate: [200, 100, 200, 100, 200, 100, 200],
-                    // actions: [
-                        // { action: 'like', title: '👍Yes' },
-                        // { action: 'reply', title: '⤻ Reply' }
-                    // ]
+                    actions: [
+                        { action: 'like', title: '👍Yes' },
+                        { action: 'reply', title: '⤻ Reply' }
+                    ]
                 });
             }
             // Otherwise, we need to ask the user for permission
             else if (Notification.permission !== "denied") {
+                console.log('Notification.permission !== "denied"')
+              
                 Notification.requestPermission().then(function(permission) {
                     // If the user accepts, let's create a notification
+                    console.log('requestPermission in then')
+                  
                     if (Notification.permission === "granted") {
+                        console.log('requestPermission in then granted')
+                      
                         // If it's okay let's create a notification
                         // console.log("Want to check in ? ");
 
@@ -93,10 +102,10 @@ self.addEventListener('message', function(event) {
                             // timestamp: Date.now(),
                             requireInteraction: true,
                             vibrate: [200, 100, 200, 100, 200, 100, 200],
-                            // actions: [
-                            //     { action: 'like', title: '👍Yes' },
-                            //     // { action: 'reply', title: '⤻ Reply' }
-                            // ]
+                            actions: [
+                                { action: 'like', title: '👍Yes' },
+                                { action: 'reply', title: '⤻ Reply' }
+                            ]
                         });;
                     }
                 });
