@@ -106,6 +106,7 @@
     </main>
     <div class="form-group col-6" id="install_p">
         <a href="#"> Install App </a>
+        <button class="btn btn-danger j__trigger_notf " > Trigger notf </button>
     </div>
     
 </body>
@@ -172,5 +173,29 @@ window.addEventListener('appinstalled', (event) => {
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null;
 });
+      
+      
+      const el = document.querySelector('.j__trigger_notf')
+el.addEventListener("click", function (e) {
+       console.log("e :", e);
+       navigator.serviceWorker.controller.postMessage({
+            type: "USERLOGON_1",
+            data: {
+                "new_posts": [
+                    {
+                        "id": "1181",
+                        "php_punch": "2022-01-29 16:07:25.000",
+                        "emp_id": "549",
+                        "punched_by": "549",
+                        "type": "3",
+                        "created_on": "2022-01-29 16:08:29.250",
+                        "updated_on": null,
+                        "is_deleted": "0"
+                    }
+                ],
+                "error": 0
+            },
+        });
+}, false);
   </script>
 </html>
